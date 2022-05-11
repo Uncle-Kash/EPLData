@@ -44,3 +44,9 @@ links = [l.get('href')] for l in links]
 links = [l for l in links if l and 'all_comps/shooting/' in links]
 
 print(links)
+
+data = requests.get(f"https://fbref.com{links[0]}")
+
+shooting = pd.read_html(data.text, match='Shooting')[0]
+
+shooting.head()
