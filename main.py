@@ -38,5 +38,9 @@ matches = pd.read_html(data.text, match="Scores & Fixtures")
 
 print(matches[0])
 
+soup = BeautifulSoup(data.text)
+links = soup.find_all('a')
+links = [l.get('href')] for l in links]
+links = [l for l in links if l and 'all_comps/shooting/' in links]
 
-
+print(links)
