@@ -36,5 +36,7 @@ data = requests.get(team_url)
 
 matches = pd.read_html(data.text, match="Scores & Fixtures")
 
-print(matches)
 print(matches[0])
+
+
+
